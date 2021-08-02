@@ -4,23 +4,19 @@ Created on Mon Jul 26 23:25:59 2021
 
 @author: Lenovo
 """
-
 from deepface import DeepFace
 import streamlit as st
 import PIL
 import os
 
 st.title("Facial Recognition sys")
-st.write("""
-         > Best Backend for face detection is default opencv
-         
-         > Best Metrics is Cosine
-         
-         > Best Model in Facenet512""")
-
-
-
-os.chdir("D:/AI-ML_Trainee/Facial_recog")
+list = []
+directory_contents = os.listdir("Dataset")
+for item in directory_contents:
+    if os.path.isdir(item):
+        item
+        list.append(item)
+st.write("The available Faces are",next(os.walk('Dataset'))[1])
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
@@ -35,26 +31,19 @@ if temp_img is not None:
     with open(path,"wb") as f: 
       f.write(temp_img.getbuffer())  
 #    try:
-    df = DeepFace.find(path,'D:/AI-ML_Trainee/Facial_recog/Dataset/',distance_metric = option2,model_name = option,)
+    df = DeepFace.find(path,'Dataset',distance_metric = option2,model_name = option,)
     if len(df.index) != 0:
         "Match Found"
         best_match = df['identity'][0]
         parent = os.path.dirname(best_match)
         pro_parent = os.path.dirname(parent) 
         classs = parent.replace(pro_parent , '')
-        classs = classs.replace("\\", "")
-        st.write("### Class :", classs)
+        classs = classs.replace("/Dataset", ": ")
+        st.write("### Class ", classs)
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
-        df.drop(option + '_' +option2,axis = 1)
         st.dataframe(df.head())
-        "Select to open image from database"
-        names = df.head()["identity"]
-        name_options = st.selectbox("Choose image to open",names)
-        if st.button("Open"):
-            new_img = PIL.Image.open(name_options).convert('RGB')
-            new_img = new_img.resize((300,300))
-            st.image(new_img)
+        
     else:
         "No Match Found"
 #"""    except:
