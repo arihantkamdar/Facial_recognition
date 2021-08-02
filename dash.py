@@ -42,6 +42,7 @@ if temp_img is not None:
         pro_parent = os.path.dirname(parent) 
         classs = parent.replace(pro_parent , '')
         classs = classs.replace("/Dataset", "")
+        classs = classs.replace("\","")
         st.write("### Class :", classs)
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
