@@ -11,12 +11,6 @@ import PIL
 import os
 
 st.title("Facial Recognition sys")
-st.write("""
-         > Best Backend for face detection is default opencv
-         
-         > Best Metrics is Cosine
-         
-         > Best Model in Facenet512""")
 
 
 
