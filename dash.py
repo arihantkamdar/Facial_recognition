@@ -13,7 +13,9 @@ import os
 st.title("Facial Recognition sys")
 directory = os.listdir("Dataset")
 for i in directory:
-    if os.path.isdir(i)==False:
+    if os.path.isdir(i):
+        pass
+    else:
         directory.remove(i)
 st.write("The available Faces are",directory)
 "Upload the Image to be recognized"
