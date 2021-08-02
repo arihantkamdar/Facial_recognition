@@ -1,0 +1,4 @@
+deepface
+streamlit 
+Pillow
+os
