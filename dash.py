@@ -45,7 +45,7 @@ if temp_img is not None:
         st.write("### Class ", classs)
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
-        df.drop(option + '_' +option2,axis = 1)
+        df['identity'] = os.path.relpath(df['identity'],os.cwd())
         st.dataframe(df.head())
         "Select to open image from database"
         names = df.head()["identity"]
