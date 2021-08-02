@@ -41,8 +41,8 @@ if temp_img is not None:
         df["Smilarity"] = 1/df[option + '_' +option2]
         st.dataframe(df.head())
         name_options = st.selectbox("Choose image to open",names)
-        name_options_parent os.path.dirname(name_options)
-        pro_name_options_parent os.path.dirname(name_options_parent)
+        name_options_parent= os.path.dirname(name_options)
+        pro_name_options_parent= os.path.dirname(name_options_parent)
         dirr = os.path.dirname(pro_name_options_parent)
         name_options = name_options.replace(dirr,"")
         if st.button("Open"):
