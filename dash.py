@@ -40,9 +40,11 @@ if temp_img is not None:
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
         st.dataframe(df.head())
-        names = df.head()["identity"]
-        path_parent = os.path.dirname(os.path.dirname(names))
-        name_options = st.selectbox("Choose image to open",path_parent)
+        name_options = st.selectbox("Choose image to open",names)
+        name_options_parent os.path.dirname(name_options)
+        pro_name_options_parent os.path.dirname(name_options_parent)
+        dirr = os.path.dirname(pro_name_options_parent)
+        name_options = name_options.replace(dirr,"")
         if st.button("Open"):
             new_img = PIL.Image.open(name_options).convert('RGB')
             new_img = new_img.resize((300,300))
