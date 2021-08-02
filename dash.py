@@ -40,6 +40,7 @@ if temp_img is not None:
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
         st.dataframe(df.head())
+        names = df['identity']
         name_options = st.selectbox("Choose image to open",names)
         name_options_parent= os.path.dirname(name_options)
         pro_name_options_parent= os.path.dirname(name_options_parent)
