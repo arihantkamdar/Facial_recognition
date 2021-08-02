@@ -12,7 +12,7 @@ import os
 
 st.title("Facial Recognition sys")
 
-st.write("The available Faces are",[x for x in os.walk("Dataset")])
+st.write("The available Faces are",[x for x in os.listdir("Dataset")])
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
