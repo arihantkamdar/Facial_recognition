@@ -40,16 +40,6 @@ if temp_img is not None:
         "Best Matches :"
         df["Smilarity"] = 1/df[option + '_' +option2]
         st.dataframe(df.head())
-        names = df['identity']
-        name_options = st.selectbox("Choose image to open",names)
-        name_options_parent= os.path.dirname(name_options)
-        pro_name_options_parent= os.path.dirname(name_options_parent)
-        dirr = os.path.dirname(pro_name_options_parent)
-        name_options = name_options.replace(dirr+'/Facial_recog/Dataset\\',"Dataset")
-        if st.button("Open"):
-            new_img = PIL.Image.open(name_options).convert('RGB')
-            new_img = new_img.resize((300,300))
-            st.image(new_img)
         
     else:
         "No Match Found"
