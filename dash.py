@@ -34,7 +34,7 @@ if temp_img is not None:
     with open(path,"wb") as f: 
       f.write(temp_img.getbuffer())  
 #    try:
-    df = DeepFace.find(path,'/Dataset/',distance_metric = option2,model_name = option,)
+    df = DeepFace.find(path,'Dataset',distance_metric = option2,model_name = option,)
     if len(df.index) != 0:
         "Match Found"
         best_match = df['identity'][0]
