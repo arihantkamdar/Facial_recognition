@@ -45,7 +45,7 @@ if temp_img is not None:
         name_options_parent= os.path.dirname(name_options)
         pro_name_options_parent= os.path.dirname(name_options_parent)
         dirr = os.path.dirname(pro_name_options_parent)
-        name_options = name_options.replace(dirr+'/Facial_recog/',"")
+        name_options = name_options.replace(dirr+'/Facial_recog/Dataset\\',"Dataset")
         if st.button("Open"):
             new_img = PIL.Image.open(name_options).convert('RGB')
             new_img = new_img.resize((300,300))
