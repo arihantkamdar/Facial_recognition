@@ -17,7 +17,7 @@ for item in directory_contents:
     if os.path.isdir(item):
         item
         list.append(item)
-st.write("The available Faces are",list)
+st.write("The available Faces are",next(os.walk('Dataset'))[1])
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
