@@ -1,4 +1,3 @@
 deepface
 streamlit 
 Pillow
-os
