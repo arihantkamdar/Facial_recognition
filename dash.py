@@ -14,7 +14,7 @@ st.title("Facial Recognition sys")
 directory = os.listdir("Dataset")
 for i in directory:
     if os.path.isdir(i)==False:
-        x.remove(i)
+        directory.remove(i)
 st.write("The available Faces are",directory)
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
