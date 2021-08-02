@@ -20,7 +20,6 @@ st.write("""
 
 
 
-os.chdir("D:/AI-ML_Trainee/Facial_recog")
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
