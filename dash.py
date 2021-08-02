@@ -15,6 +15,7 @@ list = []
 directory_contents = os.listdir("Dataset")
 for item in directory_contents:
     if os.path.isdir(item):
+        item
         list.append(item)
 st.write("The available Faces are",list)
 "Upload the Image to be recognized"
