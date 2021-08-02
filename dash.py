@@ -11,13 +11,12 @@ import PIL
 import os
 
 st.title("Facial Recognition sys")
-directory = os.listdir("Dataset")
-for i in directory:
-    if os.path.isdir(i):
-        pass
-    else:
-        directory.remove(i)
-st.write("The available Faces are",directory)
+list = []
+directory_contents = os.listdir("Dataset")
+for item in directory_contents:
+    if os.path.isdir(item):
+        list.append(item)
+st.write("The available Faces are",list)
 "Upload the Image to be recognized"
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib","Ensemble"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
